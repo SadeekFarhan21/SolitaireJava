@@ -1,17 +1,17 @@
 import javax.swing.*;
+import java.util.*;
 import java.awt.*;
 
-public class Pile extends JPanel {
+public abstract class Pile extends JPanel {
     protected int x, y;
+    protected Stack <Card> cards;
 
     public Pile(int x, int y){
         super.setLocation(x, y);
+        cards = new Stack<>();
     }
 
-    @Override
-    protected void paintComponent(Graphics g){
-        super.paintComponent(g);
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.drawRect(0, 0, this.getWidth(), this.getHeight());
+    public boolean isEmpty(){
+        return this.cards.isEmpty();
     }
 }

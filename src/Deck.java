@@ -13,6 +13,9 @@ public class Deck extends Pile {
         g2d.setStroke(new BasicStroke(5));
         g2d.setColor(Color.WHITE);
         g2d.drawRect(0, 0, 72, this.getHeight());
-
+        if(!isEmpty()){
+            g.drawImage(Card.getCardBack(), 0 ,0, 72, this.getHeight(), this);
+        }
+        
     }
 }
