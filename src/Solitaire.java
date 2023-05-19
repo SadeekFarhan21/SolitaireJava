@@ -1,9 +1,11 @@
+// Main Game File
 import java.awt.*;
 import javax.swing.*;
 
-public class Solitaire extends JFrame {
+public class Solitaire extends JFrame{
 	
-	// Variables for the program
+	
+	// Variables
 	static protected GamePanel gamePanel;
 	public static final int PANEL_WIDTH = 640, PANEL_HEIGHT = 500;
 	
@@ -16,8 +18,9 @@ public class Solitaire extends JFrame {
 		pack();
 	}
 	
-	// Methods
+	// Method
 	public static void main(String[] args) {
 		new Solitaire().setVisible(true);
 	}
+
 }
