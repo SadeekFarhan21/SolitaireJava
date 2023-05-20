@@ -1,4 +1,5 @@
 import java.awt.*;
+import javax.swing.*;
 
 public class Deck extends Pile {
 
@@ -19,6 +20,6 @@ public class Deck extends Pile {
 		g2d.setColor(Color.WHITE);
 		g2d.drawRect(0, 0, 72, this.getHeight());
 		
-		
+		g.drawImage(Card.getCardBack(), 0, 0, 72, this.getHeight(), this);
 	}	
 }
