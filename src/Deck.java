@@ -8,6 +8,13 @@ public class Deck extends Pile {
 	public Deck(int x, int y) {
 		super(x, y);
 		super.setSize(72, 96);
+		for(Suit suit : Suit.values()){
+			for(int i = 1; i <= 13; ++i){
+				Card card = new Card(i, suit);
+				push(card);
+				System.out.println("Pushed into deck " + card);
+			}
+		}
 	}
 	
 	
