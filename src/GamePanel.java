@@ -6,16 +6,24 @@ public class GamePanel extends JPanel {
 	
 	
 	// Variables
+	private static int DECK_OFFSET = 500;
+	protected static int XShift = 80;
 	private static Deck deck;
-	
+	private static Waste waste;
 	
 	// Constructor
 	public GamePanel() {
 		super.setLayout(null);
-		deck = new Deck(500, 20);
-		add(deck);
+		initializePiles();
 	}
 	
+
+	private void initializePiles(){
+		deck = new Deck(DECK_OFFSET, 20);
+		add(deck);
+		waste = new Waste(DECK_OFFSET - XShift, 20);
+		add(waste);
+	}
 	
 	// Methods
 	@Override
