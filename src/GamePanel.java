@@ -1,11 +1,11 @@
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Point;
+/* Librariers for the program */
 
-import javax.swing.JPanel;
+import java.awt.*;
+import javax.swing.*;
 
 public class GamePanel extends JPanel {
-	
+
+	/* Variables */
 	protected static int XShift = 80;
 	public static Point DECK_POSITION = new Point(500, 20);
 	public static Point TABLEAU_POSITION = new Point(20, 150);
