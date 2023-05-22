@@ -1,24 +1,23 @@
-import java.awt.*;
-import javax.swing.*;
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.util.Collections;
 
 public class Deck extends Pile {
 
-	
-	// Constructor
 	public Deck(int x, int y) {
 		super(x, y);
 		super.setSize(72, 96);
-		for(Suit suit : Suit.values()){
-			for(int i = 1; i <= 13; ++i){
-				Card card = new Card(i, suit);
-				push(card);
-				System.out.println("Pushed into deck " + card);
+		for(Suit suit : Suit.values()) {
+			for(int j = 1; j <= 13; ++j) {
+				push(new Card(j, suit));
 			}
 		}
+		
+		Collections.shuffle(cards);
 	}
-	
-	
-	// Methods
+
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -26,7 +25,10 @@ public class Deck extends Pile {
 		g2d.setStroke(new BasicStroke(5));
 		g2d.setColor(Color.WHITE);
 		g2d.drawRect(0, 0, 72, this.getHeight());
-		
-		g.drawImage(Card.getCardBack(), 0, 0, 72, this.getHeight(), this);
-	}	
+
+		if (!isEmpty()) {
+			g.drawImage(Card.getCardBack(), 0, 0, 72, this.getHeight(), this);
+		}
+	}
+
 }

@@ -1,15 +1,12 @@
-// Main Game File
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Dimension;
+
+import javax.swing.JFrame;
 
 public class Solitaire extends JFrame{
 	
-	
-	// Variables
 	static protected GamePanel gamePanel;
 	public static final int PANEL_WIDTH = 640, PANEL_HEIGHT = 500;
 	
-	// Constructor
 	public Solitaire() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gamePanel = new GamePanel();
@@ -17,8 +14,7 @@ public class Solitaire extends JFrame{
 		add(gamePanel);
 		pack();
 	}
-	
-	// Method
+
 	public static void main(String[] args) {
 		new Solitaire().setVisible(true);
 	}

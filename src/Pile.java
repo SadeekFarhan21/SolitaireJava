@@ -1,24 +1,42 @@
-import javax.swing.*;
-import java.util.*;
+import java.util.EmptyStackException;
+import java.util.Stack;
 
-public class Pile extends JPanel {
+import javax.swing.JPanel;
+
+public abstract class Pile extends JPanel {
 	
-	// Variables
 	protected int x, y;
-	protected Stack <Card> cards;
-	
-	// Constructor
+	protected Stack<Card> cards;
+
 	public Pile(int x, int y) {
 		super.setLocation(x, y);
 		cards = new Stack<>();
+		
 	}
-
-	public void push(Card someCard){
+	
+	public Card topCard() {
+		if(!this.cards.isEmpty()) {
+			return this.cards.peek();
+		}
+		return null;
+	}
+	
+	public Card pop() {
+		try {
+			return cards.pop();
+		}catch(EmptyStackException ese) {
+			return null;
+		}
+	}
+	
+	public void push(Card someCard) {
 		this.cards.push(someCard);
 	}
-
-	public boolean isEmpty(){
+	
+	public boolean isEmpty() {
 		return this.cards.isEmpty();
 	}
+	
+	
 
 }
